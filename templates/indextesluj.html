@@ -1,0 +1,52 @@
+{% load staticfiles %}
+<!Doctype html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Tesluj</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static "/css/stylesheet.css" %}" rel="stylesheet">
+    </head>
+<body>
+<header>
+<section>
+<h1>Tesluj<br></<h1>
+</section>
+</header>
+<nav>
+    <ul>
+        <li class="menubar"><a href="index.html">Novinky</a></li>
+        <li class="menubar"><a href="otesle.html">O Tesle</a></li>
+        <li class="menubar"><a href="vozy.html">Vozy</a></li>
+        <li class="menubar"><a href="diskuze.html">Diskuze</a></li>
+        <li class="menubar"><a href="nabidka_vozu.html">Nabídka vozů</a></li>
+        <li class="menubar"><a href="owebu.html">O webu</a></li>
+    </ul>
+</nav>
+
+<section class="category">
+    <h2> <div class="category">Novinky</div></h2>
+        <p class="text">V tomto magazínu se dočtete <em>nejaktuálnější informace</em> o Tesle.</p>
+</section>
+
+
+
+<footer>
+<section>
+<h3>Odběr novinek</h3>
+<form action = "/mailinglist.php" method="POST">
+    <fieldset>
+        <legend class="text">Přidejte se k odběru newsletteru</legend>
+            <p class="text">Bližší info doplnit </p>
+            <ol>
+                <li><label for="firstlast">Jméno:</label><input type="text" name="fullname" id="firstlast"></li>
+                <li><label for="email">Email:</label><input type="text" name="email" id="email"></li>
+            </ol>
+    </fieldset>
+</form>
+</section>
+        <p class="text"><small>Copyright &copy;2017 Jakub Hladik. </small></p>
+</footer>
+</body>
+</html>

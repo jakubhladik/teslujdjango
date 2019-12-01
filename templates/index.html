@@ -1,0 +1,45 @@
+{% load staticfiles %}
+{% block content %}
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Tesluj</title>
+<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="{% static "/css/stylesheet.css" %}" rel="stylesheet">
+</head>
+<header>
+    <section>
+    <h1>Tesluj<br></<h1>
+    </section>
+</header>
+<nav>
+    <ul>
+        <li class="menubar"><a href="index.html">Novinky</a></li>
+        <li class="menubar"><a href="otesle.html">O Tesle</a></li>
+        <li class="menubar"><a href="vozy.html">Vozy</a></li>
+        <li class="menubar"><a href="diskuze.html">Diskuze</a></li>
+        <li class="menubar"><a href="nabidka_vozu.html">Nabídka vozů</a></li>
+        <li class="menubar"><a href="owebu.html">O webu</a></li>
+    </ul>
+</nav>
+<div class="container">
+    <div class="row">
+        <!-- Blog Entries Column -->
+        <div class="col-md-8 mt-3 left">
+            {% for post in post_list %}
+            <div class="card mb-4">
+                <div class="post-body">
+                    <h2 class="post-title">{{ post.title }}</h2>
+                    <p class="post-author">{{ post.author }} | {{ post.created_on}} </p>
+                    <p class="post-text">{{post.content|slice:":100" }}</p>
+                    <a href="{% url 'post_detail' post.slug  %}" class="readmore">Více... &rarr;</a>
+                    <img class="post-image" src="{{ post.image.url }}" alt="image{{post.title}}"/>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{%endblock%}
+</html>
