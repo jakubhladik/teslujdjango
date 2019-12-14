@@ -26,7 +26,7 @@ SECRET_KEY = 'x)50t0z7$n6e2c((j=$4#y!j7^&^w*3@8ax-qoery62v5v6a2w'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['jakubhladik.pythonanywhere.com']
 
 
 # Application definition
@@ -73,24 +73,19 @@ TEMPLATES = [
 WSGI_APPLICATION = 'teslujdjango.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/1.11/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'teslujdb',
-        'USER': 'jakubhladik',
-        'PASSWORD': 'moonagedaydream21',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
-}
-
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'jakubhladik$teslujdb',
+        'USER': 'jakubhladik',
+        'PASSWORD': 'moonagedaydream21',
+        'HOST': 'jakubhladik.mysql.pythonanywhere-services.com',
+    }
+}
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -124,11 +119,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
+STATIC_ROOT = "/home/jakubhladik/teslujdjango/static"
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-    '/Users/jakubhladik/Public/TESLUJ/teslujdjango/static/',  # Here you tell django to look for a folder named 'assets'
-]
 STATIC_URL = '/static/'
 
 MEDIA_URL = '/media/'
